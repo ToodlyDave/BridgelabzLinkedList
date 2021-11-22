@@ -22,12 +22,8 @@ public class LinkedListServices {
 	}
 	
 	public void insertBetween(int before, int value) {
-		Node currentNode = head;
-		Node newNode = new Node(value);
-		
-		while(currentNode.data != before) {
-			currentNode = currentNode.next;
-		}
+		Node currentNode = findNode(before);
+		Node newNode = new Node(value); 
 		
 		newNode.next = currentNode.next;
 		currentNode.next = newNode;
