@@ -38,6 +38,18 @@ public class LinkedListServices {
 		head = head.next;
 	}
 	
+	public void popLast() {
+		Node currentNode = head;
+		Node prevNode = head;
+		
+		while(currentNode.next != null) {
+			prevNode = currentNode;
+			currentNode = currentNode.next;			
+		}
+		
+		prevNode.next = null;
+	}
+	
 	public void displayLinkedList() {
 		Node currentNode = head;
 		

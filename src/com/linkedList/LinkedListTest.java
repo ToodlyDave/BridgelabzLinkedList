@@ -11,7 +11,7 @@ public class LinkedListTest {
 		list.append(70);
 		list.displayLinkedList();
 		
-		list.pop();
+		list.popLast();
 		list.displayLinkedList();
 	}
 }
