@@ -23,6 +23,12 @@ public class LinkedListServices {
 	
 	public void insertBetween(int before, int value) {
 		Node currentNode = findNode(before);
+		
+		if(currentNode == null) {
+			System.out.println(" This node does not exist! ");
+			return;
+		}
+		
 		Node newNode = new Node(value); 
 		
 		newNode.next = currentNode.next;
@@ -51,7 +57,6 @@ public class LinkedListServices {
 		
 		while(currentNode != null) {
 			if(currentNode.data == value) {
-				System.out.println(" Found " + value);
 				return currentNode;
 			}
 			
@@ -61,6 +66,36 @@ public class LinkedListServices {
 		System.out.println(" Could NOT find " + value);
 		return null;
 		
+	}
+	
+	public void deleteNode(int value) {
+		Node currentNode = head;
+		Node prevNode = head;
+		
+		while(currentNode != null) {
+			if(currentNode.data == value) {
+				prevNode.next = currentNode.next;
+				return;
+			}
+			
+			prevNode = currentNode;
+			currentNode = currentNode.next;
+		}
+		
+		System.out.println(" Could NOT find " + value);
+		
+	}
+	
+	public int size() {
+		Node currentNode = head;
+		int count = 0;
+		
+		while(currentNode != null) {
+			count++;
+			currentNode = currentNode.next;
+		}
+		
+		return count;
 	}
 	
 	public void displayLinkedList() {
