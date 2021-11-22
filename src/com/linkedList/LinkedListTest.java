@@ -9,9 +9,9 @@ public class LinkedListTest {
 		list.insertAtHead(56);
 		list.append(30);
 		list.append(70);
+		
 		list.displayLinkedList();
 		
-		list.popLast();
-		list.displayLinkedList();
+		list.findNode(30);
 	}
 }

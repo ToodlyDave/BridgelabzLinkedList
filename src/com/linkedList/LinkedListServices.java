@@ -50,6 +50,23 @@ public class LinkedListServices {
 		prevNode.next = null;
 	}
 	
+	public Node findNode(int value) {
+		Node currentNode = head;
+		
+		while(currentNode.next != null) {
+			if(currentNode.data == value) {
+				System.out.println(" Found " + value);
+				return currentNode;
+			}
+			
+			currentNode = currentNode.next;
+		}
+		
+		System.out.println(" Could NOT find " + value);
+		return null;
+		
+	}
+	
 	public void displayLinkedList() {
 		Node currentNode = head;
 		
