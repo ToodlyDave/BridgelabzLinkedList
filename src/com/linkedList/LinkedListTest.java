@@ -3,11 +3,13 @@ package com.linkedList;
 public class LinkedListTest {
 
 	public static void main(String[] args) {
-		Node node1 = new Node(56);
-		Node node2 = new Node(30);
-		Node node3 = new Node(70);
+
+		LinkedListServices list = new LinkedListServices();
 		
-		node1.next = node2;
-		node2.next = node3;
+		list.insertAtHead(70);
+		list.insertAtHead(30);
+		list.insertAtHead(56);
+		
+		list.displayLinkedList();
 	}
 }
