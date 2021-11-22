@@ -6,9 +6,10 @@ public class LinkedListTest {
 
 		LinkedListServices list = new LinkedListServices();
 		
-		list.insertAtHead(70);
-		list.insertAtHead(30);
 		list.insertAtHead(56);
+		list.append(30);
+		list.append(70);
+		
 		
 		list.displayLinkedList();
 	}

@@ -10,6 +10,16 @@ public class LinkedListServices {
 		head = newNode;
 	}
 	
+	public void append(int value) {
+		Node currentNode = head;
+		Node newNode = new Node(value);
+		while(currentNode.next != null) {
+			currentNode = currentNode.next;
+		}	
+		
+		currentNode.next = newNode;
+	}
+	
 	public void displayLinkedList() {
 		Node currentNode = head;
 		
