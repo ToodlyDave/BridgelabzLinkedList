@@ -53,7 +53,7 @@ public class LinkedListServices {
 	public Node findNode(int value) {
 		Node currentNode = head;
 		
-		while(currentNode.next != null) {
+		while(currentNode != null) {
 			if(currentNode.data == value) {
 				System.out.println(" Found " + value);
 				return currentNode;
