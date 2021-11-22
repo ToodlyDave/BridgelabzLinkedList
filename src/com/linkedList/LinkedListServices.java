@@ -34,6 +34,10 @@ public class LinkedListServices {
 		
 	}
 	
+	public void pop() {
+		head = head.next;
+	}
+	
 	public void displayLinkedList() {
 		Node currentNode = head;
 		

@@ -7,10 +7,11 @@ public class LinkedListTest {
 		LinkedListServices list = new LinkedListServices();
 		
 		list.insertAtHead(56);
+		list.append(30);
 		list.append(70);
 		list.displayLinkedList();
 		
-		list.insertBetween(56, 30);
+		list.pop();
 		list.displayLinkedList();
 	}
 }
