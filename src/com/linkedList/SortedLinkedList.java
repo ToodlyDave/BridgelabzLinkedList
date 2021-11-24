@@ -19,7 +19,7 @@ public class SortedLinkedList {
 			return;
 		}
 		
-		if (head.data > newNode.data) {
+		if (head.compareTo(newNode) > 0) {
 			insertAtHead(value);
 			return;
 		}
@@ -28,12 +28,12 @@ public class SortedLinkedList {
 		Node prevNode = head;
 		
 		while (currentNode != null) {
-			if(newNode.data < currentNode.data) {
+			if(newNode.compareTo(currentNode) < 0) {
 				newNode.next = currentNode;
 				prevNode.next = newNode;
 				break;
 			}
-			else if (newNode.data > currentNode.data && currentNode.next == null) {
+			else if (newNode.compareTo(currentNode) > 0 && currentNode.next == null) {
 				currentNode.next = newNode;
 				break;
 			}
