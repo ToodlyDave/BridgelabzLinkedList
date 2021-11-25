@@ -14,35 +14,34 @@ public class SortedLinkedList {
 	public void insert(int value) {
 		Node newNode = new Node(value);
 		
+		Node prevNode = head;
+		Node currentNode = head;
+		
 		if (head == null) {
 			insertAtHead(value);
 			return;
 		}
 		
-		if (head.compareTo(newNode) > 0) {
-			insertAtHead(value);
-			return;
-		}
-		
-		Node currentNode = head;
-		Node prevNode = head;
-		
-		while (currentNode != null) {
-			if(newNode.compareTo(currentNode) < 0) {
+		while(currentNode != null) {
+			if (newNode.compareTo(currentNode) < 0) {
 				newNode.next = currentNode;
-				prevNode.next = newNode;
-				break;
-			}
-			else if (newNode.compareTo(currentNode) > 0 && currentNode.next == null) {
-				currentNode.next = newNode;
-				break;
+				
+				if(currentNode.compareTo(head) == 0) 
+					head = newNode;
+				else
+					prevNode.next = newNode;
+				
+				displayLinkedList();
+				return;
 			}
 			
 			prevNode = currentNode;
 			currentNode = currentNode.next;
 		}
 		
+		prevNode.next = newNode;
 		displayLinkedList();
+		
 	}
 	
 	public void displayLinkedList() {
