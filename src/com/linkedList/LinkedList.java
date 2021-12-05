@@ -1,6 +1,6 @@
 package com.linkedList;
 
-public class LinkedListServices {
+public class LinkedList {
 	
 	Node head = null;
 
@@ -36,11 +36,11 @@ public class LinkedListServices {
 		
 	}
 	
-	public void pop() {
+	public void deleteFront() {
 		head = head.next;
 	}
 	
-	public void popLast() {
+	public void deleteLast() {
 		Node currentNode = head;
 		Node prevNode = head;
 		
